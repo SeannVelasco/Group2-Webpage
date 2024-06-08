@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>WebProg</title>
+        <meta name="viewport" content="width=device-width, initialscale=1.0">
+        <link href="https://fontawesome.com/icons/bars?f=classic&s=solid" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Seymour+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="Index.css">
+        <script type="text/javascript">
+            document.addEventListener("mousemove", parallax);
+            function parallax(e) {
+                this.querySelectorAll('#parallaxEffect').forEach(Effect => {
+                    const speed = Effect.getAttribute('data-speed')
+                    const x = (window.innerWidth - e.pageX*speed)/100
+                    const y = (window.innerHeight - e.pageY*speed)/100
+                    Effect.style.transform = `translateX(${x}px) translateY(${y}px)`
+                })
+            }
+            var mouseLight = document.documentElement;
+            mouseLight.addEventListener('mousemove', light => {
+                mouseLight.style.property('--x', light.clientX + 'px');
+                mouseLight.style.property('--y', light.clientY + 'px');
+            })
+        </script>
+    </head>
+    <body id="p" data-speed="10">
+        <div class="textContainer">
+            <h1>WELCOME</h1>
+            <h2>TO OUR</h2>
+            <h3>WEBSITE</h3>
+        </div>
+        <div class="underline"></div>
+        <div class="btnContainer" align="center">
+            <a href="" id="Home"><button class="Btn">HOME</button></a>
+        </div>
+    </body>
+</html>
